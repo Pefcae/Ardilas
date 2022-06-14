@@ -152,7 +152,7 @@ Listproducts.push (new Product('Remera Seleccion Argentina', 100,3));
 Listproducts.push (new Product('Short Seleccion Argentina', 100,3));
 
 
-alert ("Desafio entregable n3 de Pablo Federiconi (Agregando Clases y arrays)");
+alert ("Primera entrega de desafio final de Pablo Federiconi (Agregando Clases y arrays)");
 
 let Usuario = prompt("Por favor Ingrese su nombre");
 
