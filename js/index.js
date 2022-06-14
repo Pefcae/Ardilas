@@ -1,7 +1,5 @@
 let Pedido ='';
-const ListRiverPlate = [];
-const ListBocaJuniors = [];
-const ListSeleccionArgentina = [];
+const Listproducts =[];
 
 class Product {
     constructor(name, price,categoria) {
@@ -100,7 +98,6 @@ function pedirNUMERO(texto) {
      let menu='';
      let i=0;
 
-    
     for (i=0;i < Listproducts.length ;i++ )
         {
             menu= menu +"" + (i+1) +" - "  + Listproducts[i].name + " $" + Listproducts[i].price +"\n";
@@ -113,9 +110,8 @@ function pedirNUMERO(texto) {
 
     eleccion = pedirNUMERO("Por favor seleccione una opción del menú\n" + menu );
 
-    
    
-    while (eleccion<-1 || eleccion> Listproducts.lenght)
+    while (eleccion<-1 || eleccion> Listproducts.length)
            { 
                 eleccion = pedirNUMERO("opción incorrecta, Por favor seleccione una opción del menú\n" + menu );
             }
@@ -135,9 +131,9 @@ function pedirNUMERO(texto) {
                   }
 
                 eleccion = pedirNUMERO("Por favor seleccione una opción del menú\n" + menu );
-                while (eleccion<-1 || eleccion>Listproducts.lenght)
-                    { 
 
+                while (eleccion<-1 || eleccion>Listproducts.length)
+                    { 
                         eleccion = pedirNUMERO("opción incorrecta, Por favor seleccione una opción del menú\n" + menu );
                     }
              }
@@ -148,16 +144,12 @@ function pedirNUMERO(texto) {
 
 const cliente = new CarritoDeCompras();
 
-ListRiverPlate.push (new Product('Remera River Plate', 500,1));
-ListRiverPlate.push (new Product('Short River Plate', 400,1));
-ListBocaJuniors.push (new Product('Remera Boca Juniors', 200,2));
-ListBocaJuniors.push (new Product('Short Boca Juniors', 300,2));
-ListSeleccionArgentina.push (new Product('Remera Seleccion Argentina', 100,3));
-ListSeleccionArgentina.push (new Product('Short Seleccion Argentina', 100,3));
-
-const Listproducts = (ListRiverPlate.concat(ListBocaJuniors)).concat(ListSeleccionArgentina);
-
-
+Listproducts.push (new Product('Remera River Plate', 500,1));
+Listproducts.push (new Product('Short River Plate', 400,1));
+Listproducts.push (new Product('Remera Boca Juniors', 200,2));
+Listproducts.push (new Product('Short Boca Juniors', 300,2));
+Listproducts.push (new Product('Remera Seleccion Argentina', 100,3));
+Listproducts.push (new Product('Short Seleccion Argentina', 100,3));
 
 
 alert ("Desafio entregable n3 de Pablo Federiconi (Agregando Clases y arrays)");
