@@ -294,3 +294,9 @@ if (cliente.productos.length>0)
 
 alert("Muchas gracias por su pedido, Vuelva Pronto");
 }
+
+
+function Mensajes()
+{
+    alert("Aún no tiene mensajes")
+}
