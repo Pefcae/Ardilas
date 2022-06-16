@@ -26,6 +26,7 @@ class CarritoDeCompras {
     constructor() {
         this.productos = []
         this.name = ''
+        this.puntaje= ''
         this.total = 0
     }
     setName(value) {
@@ -70,6 +71,46 @@ class CarritoDeCompras {
 
 }
 
+const cliente = new CarritoDeCompras();
+
+Listproducts.push (new Product('BJ-01','CAMISETA DE ARQUERO BOCA JUNIORS 21-22',3,12000,0,'BOCA'));
+Listproducts.push (new Product('BJ-02','CAMISETA TITULAR OFICIAL BOCA JUNIORS 21-22',4,12000,10800,'BOCA'));
+Listproducts.push (new Product('BJ-03','CAMISETA VISITANTE OFICIAL BOCA JUNIORS 21-22 ',5,12000,0,'BOCA'));
+Listproducts.push (new Product('BJ-05','CAMPERA ANTHEM TIRO BOCA JUNIORS',4.5,12000,0,'BOCA'));
+Listproducts.push (new Product('BJ-06','MEDIAS ADI 21 AMARILLA',3,2000,1800,'BOCA'));
+Listproducts.push (new Product('BJ-08','REMERA ICONS BOCA JUNIORS MANGA LARGA',5,12000,10800,'BOCA'));
+Listproducts.push (new Product('BJ-09','SHORTS TERCERA BOCA JUNIORS 22-23',3.5,8000,0,'BOCA'));
+Listproducts.push (new Product('BJ-10','TERCERA CAMISETA BOCA JUNIORS 22-23',4.5,12000,10800,'BOCA'));
+Listproducts.push (new Product('RP-01','CAMISETA DE ARQUERO RIVER PLATE 21-22',3,12000,0,'RIVER'));
+Listproducts.push (new Product('RP-02','CAMISETA LOCAL RIVER PLATE 21-22',4,12000,10800,'RIVER'));
+Listproducts.push (new Product('RP-03','CAMISETA RIVER PLATE ICONS',5,12000,10800,'RIVER'));
+Listproducts.push (new Product('RP-04','CAMISETA TERCER UNIFORME RIVER PLATE 20-21',3.5,12000,0,'RIVER'));
+Listproducts.push (new Product('RP-05','CAMISETA VISITANTE RIVER PLATE 21-22',4.5,12000,10800,'RIVER'));
+Listproducts.push (new Product('RP-06','CAMPERA ROMPEVIENTOS RIVER PLATE',3,12000,0,'RIVER'));
+Listproducts.push (new Product('RP-07','MEDIAS ADI 21 BLANCA',4,2000,1800,'RIVER'));
+Listproducts.push (new Product('RP-09','MUSCULOSA TIRO RIVER PLATE',3.5,8000,0,'RIVER'));
+Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA',4.5,12000,0,'ARGENTINA'));
+Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA',3,12000,10800,'ARGENTINA'));
+Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21',4,12000,0,'ARGENTINA'));
+Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10',5,12000,0,'ARGENTINA'));
+Listproducts.push (new Product('SA-05','GUANTES SELECCIÓN',3.5,6000,0,'ARGENTINA'));
+Listproducts.push (new Product('SA-06','MEDIAS PANTORRILLAS AFA',4.5,2000,1800,'ARGENTINA'));
+Listproducts.push (new Product('SA-08','REMERA ICON ARGENTINA',4,12000,10800,'ARGENTINA'));
+Listproducts.push (new Product('SA-09','SHORTS TITULAR ARGENTINA',5,8000,0,'ARGENTINA'));
+
+for (i=0;i < Listproducts.length ;i++ )
+{
+    Listproducts[i].addTalle( new talle ('XS',100))
+    Listproducts[i].addTalle( new talle ('S',500))
+    Listproducts[i].addTalle( new talle ('M',600))
+    Listproducts[i].addTalle( new talle ('L',300))
+    Listproducts[i].addTalle( new talle ('XL',200))
+}
+
+
+const equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
+const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
+const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
 
 
 function operacion(valor1, valor2, operacion) {
@@ -156,55 +197,21 @@ function pedirNUMERO(texto) {
 function HacerPedido(param)
 {
 
+//const cliente = new CarritoDeCompras();
 
-
-
-const cliente = new CarritoDeCompras();
-
-Listproducts.push (new Product('BJ-01','CAMISETA DE ARQUERO BOCA JUNIORS 21-22',3,12000,0,'BOCA'));
-Listproducts.push (new Product('BJ-02','CAMISETA TITULAR OFICIAL BOCA JUNIORS 21-22',4,12000,10800,'BOCA'));
-Listproducts.push (new Product('BJ-03','CAMISETA VISITANTE OFICIAL BOCA JUNIORS 21-22 ',5,12000,0,'BOCA'));
-Listproducts.push (new Product('BJ-05','CAMPERA ANTHEM TIRO BOCA JUNIORS',4.5,12000,0,'BOCA'));
-Listproducts.push (new Product('BJ-06','MEDIAS ADI 21 AMARILLA',3,2000,1800,'BOCA'));
-Listproducts.push (new Product('BJ-08','REMERA ICONS BOCA JUNIORS MANGA LARGA',5,12000,10800,'BOCA'));
-Listproducts.push (new Product('BJ-09','SHORTS TERCERA BOCA JUNIORS 22-23',3.5,8000,0,'BOCA'));
-Listproducts.push (new Product('BJ-10','TERCERA CAMISETA BOCA JUNIORS 22-23',4.5,12000,10800,'BOCA'));
-Listproducts.push (new Product('RP-01','CAMISETA DE ARQUERO RIVER PLATE 21-22',3,12000,0,'RIVER'));
-Listproducts.push (new Product('RP-02','CAMISETA LOCAL RIVER PLATE 21-22',4,12000,10800,'RIVER'));
-Listproducts.push (new Product('RP-03','CAMISETA RIVER PLATE ICONS',5,12000,10800,'RIVER'));
-Listproducts.push (new Product('RP-04','CAMISETA TERCER UNIFORME RIVER PLATE 20-21',3.5,12000,0,'RIVER'));
-Listproducts.push (new Product('RP-05','CAMISETA VISITANTE RIVER PLATE 21-22',4.5,12000,10800,'RIVER'));
-Listproducts.push (new Product('RP-06','CAMPERA ROMPEVIENTOS RIVER PLATE',3,12000,0,'RIVER'));
-Listproducts.push (new Product('RP-07','MEDIAS ADI 21 BLANCA',4,2000,1800,'RIVER'));
-Listproducts.push (new Product('RP-09','MUSCULOSA TIRO RIVER PLATE',3.5,8000,0,'RIVER'));
-Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA',4.5,12000,0,'ARGENTINA'));
-Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA',3,12000,10800,'ARGENTINA'));
-Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21',4,12000,0,'ARGENTINA'));
-Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10',5,12000,0,'ARGENTINA'));
-Listproducts.push (new Product('SA-05','GUANTES SELECCIÓN',3.5,6000,0,'ARGENTINA'));
-Listproducts.push (new Product('SA-06','MEDIAS PANTORRILLAS AFA',4.5,2000,1800,'ARGENTINA'));
-Listproducts.push (new Product('SA-08','REMERA ICON ARGENTINA',4,12000,10800,'ARGENTINA'));
-Listproducts.push (new Product('SA-09','SHORTS TITULAR ARGENTINA',5,8000,0,'ARGENTINA'));
-
-for (i=0;i < Listproducts.length ;i++ )
-{
-    Listproducts[i].addTalle( new talle ('XS',100))
-    Listproducts[i].addTalle( new talle ('S',500))
-    Listproducts[i].addTalle( new talle ('M',600))
-    Listproducts[i].addTalle( new talle ('L',300))
-    Listproducts[i].addTalle( new talle ('XL',200))
-}
-
-
-const equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
-const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
-const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
 
 alert ("Primera entrega de desafio final de Pablo Federiconi (Agregando Clases y arrays)");
 
-let Usuario = prompt("Por favor Ingrese su nombre");
 
-cliente.setName(Usuario);
+//let Usuario = prompt("Por favor Ingrese su nombre");
+
+//cliente.setName(Usuario);
+if (cliente.name=='')
+
+    {   let Usuario = prompt("Por favor Ingrese su nombre");
+
+        cliente.setName(Usuario);
+    }
 
 alert ("Hola " + cliente.name + ", Bienvenido a Ardilas, compre con confianza :)");
 
@@ -259,7 +266,8 @@ if (cliente.productos.length>0)
 
          switch (opcion){
                     case "1":
-                        alert ("Pedido Confirmado");
+                            alert ("Pedido Confirmado");
+                            cliente.vaciarCarrito();   
                         break;
                     case "2":
                         opcion = pedirNUMERO("Seleccione el número del item que desea eliminar\n" + Pedido);
@@ -292,7 +300,7 @@ if (cliente.productos.length>0)
 
 }
 
-alert("Muchas gracias por su pedido, Vuelva Pronto");
+alert("Muchas gracias, Vuelva Pronto");
 }
 
 
@@ -300,3 +308,26 @@ function Mensajes()
 {
     alert("Aún no tiene mensajes")
 }
+
+function Login()
+{
+    let Usuario = prompt("Por favor Ingrese su Usuario");
+
+    while (Usuario =="" || Usuario ==null || Usuario.length <8) {
+        Usuario = prompt("Por favor Ingrese su nombre, recuerde que debe tener longitud mínima de 8 caracteres")
+        }
+    cliente.setName(Usuario);
+
+    let clave = prompt("Por favor Ingrese su clave");
+
+    while (clave =="" || clave ==null || clave.length <8) {
+        clave = prompt("Por favor Ingrese su clave, recuerde que debe tener longitud mínima de 8 caracteres")
+        }
+
+    cliente.setName(Usuario);
+
+
+    alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)");
+    
+}
+
