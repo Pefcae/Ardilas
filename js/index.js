@@ -1,6 +1,5 @@
 let Pedido ='';
 const Listproducts =[];
-alert("1");
 class talle {
     constructor(size,cantidad)
     {this.size = size;
@@ -154,6 +153,11 @@ function pedirNUMERO(texto) {
 
 }
 
+function HacerPedido(param)
+{
+
+
+
 
 const cliente = new CarritoDeCompras();
 
@@ -204,29 +208,35 @@ cliente.setName(Usuario);
 
 alert ("Hola " + cliente.name + ", Bienvenido a Ardilas, compre con confianza :)");
 
-let equipo;
-equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
-   
-while (equipo<0 || equipo> 5)
-   { 
+
+let equipo='';
+equipo=param;
+
+
+if (equipo=='')
+ {
+    equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
+    while (equipo<0 || equipo> 5)
+    { 
         equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
     }
-
+}
 
 switch (equipo){
     case "1":
         realizarPedido(equipo1);
         break;
-    case "2":
+    case '2':
         realizarPedido(equipo2);
         break;
-    case "3":
+    case '3':
         realizarPedido(equipo3);
         break;
-    case "4":
+    case '4':
         realizarPedido(Listproducts);
         break;
     default:
+        alert("pp")
         break;
 }
 
@@ -284,4 +294,4 @@ if (cliente.productos.length>0)
 }
 
 alert("Muchas gracias por su pedido, Vuelva Pronto");
-
+}
