@@ -216,7 +216,7 @@ equipo=param;
 if (equipo=='')
  {
     equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
-    while (equipo<0 || equipo> 5)
+    while (equipo<=0 || equipo> 5)
     { 
         equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
     }
@@ -236,7 +236,6 @@ switch (equipo){
         realizarPedido(Listproducts);
         break;
     default:
-        alert("pp")
         break;
 }
 
