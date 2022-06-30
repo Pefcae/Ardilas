@@ -12,7 +12,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
-        <script src="../js/index.js"></script>
 
     </head>
     <body>
@@ -25,22 +24,15 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href=".\Nosotros.html">Quienes Somos</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href=".\pages\PageNoFound.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href=".\All_Products.html">Todos los Productos</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href=".\River_Plate.html">River Plate</a></li>
-                                <li><a class="dropdown-item" href=".\Boca_Juniors.html">Boca Juniors</a></li>
-                                <li><a class="dropdown-item" href=".\Seleccion_argentina.html">Selección Argentina</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type=button onclick = "HacerPedido('4')"> 
-                            <i class="bi-cart-fill me-1"></i>Carrito
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
+                      <a href=".\carrito.html">
+                            <button class="btn btn-outline-dark" type=button >
+                                <i class="bi-cart-fill me-1"></i>Carrito
+                                <span class="badge bg-dark text-white ms-1 rounded-pill" id="ContadorCarrito">0</span>
+                            </button>
+                        </a> 
+
                     </form>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type=button onclick = "Mensajes()"> 
@@ -113,7 +105,8 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="../js/index.js"></script>-->
+        <script src="../js/quienesSomos.js"></script>
 
         <!-- Core theme JS-->
     </body>

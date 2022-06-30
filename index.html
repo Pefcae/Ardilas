@@ -4,19 +4,19 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Ardilas - Revendedor NO oficial de Adidas - Home</title>
-        <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="css/styles.css" rel="stylesheet" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="./js/index.js"></script>
+        
 
-
+ <title>Ardilas - Revendedor NO oficial de Adidas - Home</title>
+       
     </head>
     <body>
+
+        <header>
         <!-- Navigation https://icons.getbootstrap.com/-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -26,22 +26,15 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="./index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href=".\pages\Nosotros.html">Quienes Somos</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href=".\pages\PageNoFound.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href=".\pages\All_Products.html">Todos los Productos</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href=".\pages\River_Plate.html">River Plate</a></li>
-                                <li><a class="dropdown-item" href=".\pages\Boca_Juniors.html">Boca Juniors</a></li>
-                                <li><a class="dropdown-item" href=".\pages\Seleccion_argentina.html">Selección Argentina</a></li>
-                            </ul>
-                        </li>
+                      
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type=button onclick = "HacerPedido('')"> 
-                            <i class="bi-cart-fill me-1"></i>Carrito
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
+                        <a href=".\pages\carrito.html">
+                            <button class="btn btn-outline-dark" type=button ID="carrito">
+                                <i class="bi-cart-fill me-1"></i>Carrito
+                                <span class="badge bg-dark text-white ms-1 rounded-pill" id="ContadorCarrito">0</span>
+                            </button>
+                        </a> 
                     </form>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type=button onclick = "Mensajes()"> 
@@ -57,9 +50,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-
-
+    </header>
 
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -87,20 +78,62 @@
     </div>
 
     <h1 class="text-sm-center text-md-center text-lg-center">Home</h1>
+
+    <div class="d-flex justify-content-evenly">
+
+        <select  id = "option" name="select">
+              <option value="opt1" selected>Todos los productos</option>
+              <option value="opt2">River Plate</option>
+              <option value="opt3" >Boca Juniors</option>
+              <option value="opt4">Selección Argentina</option>
+        </select>
+
+        <!-- <input type="range" min="1500" max="15000" step="500">-->
+
         <!-- Section-->
-        <section class="py-5">
+
+       <!--  <input type="range" list="tickmarks" placeholder="pp">
+
+        <datalist id="tickmarks">
+          <option value="1000" label="1000">
+          <option value="1500" >
+          <option value="2000" label="2000">
+          <option value="2500">
+          <option value="3000" label="3000">
+          <option value="3500">
+          <option value="4000" label="4000">
+          <option value="4500">
+          <option value="5000" label="5000">
+          <option value="5500" >
+          <option value="6000" label="6000">
+          <option value="6500" >
+          <option value="7000" label="7000">
+          <option value="7500" >
+          <option value="8000" label="8000">
+          <option value="8500" >
+          <option value="9000" label="9000">
+          <option value="9500" >
+          <option value="10000" label="10000">
+          <option value="10500" >
+          <option value="11000" label="11000">
+          <option value="11500" >
+          <option value="12000" label="12000">
+        </datalist> -->
+
+        <input type="search" placeholder="Search">
+        
+
+    </div>
+        <!-- Section-->
+        <!-- <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
+                <div id="showAllProducts" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
                             <img class="card-img-top" src=".\img\RiverPlate\CAMISETA_DE_ARQUERO_RIVER_PLATE_21-22_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
                                     <h5 class="fw-bolder">Camiseta Arquero River Plate</h5>
-                                    <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -108,11 +141,9 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
                                    $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -120,16 +151,11 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
                             <img class="card-img-top" src=".\img\RiverPlate\CAMISETA_LOCAL_RIVER_PLATE_21-22_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
                                     <h5 class="fw-bolder">Camiseta Local River Plate</h5>
-                                    <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -137,12 +163,10 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -150,16 +174,11 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
                             <img class="card-img-top" src=".\img\RiverPlate\CAMISETA_RIVER_PLATE_ICONS_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
                                     <h5 class="fw-bolder">Camiseta River Plate Icons</h5>
-                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -167,12 +186,10 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -180,14 +197,10 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
                             <img class="card-img-top" src=".\img\RiverPlate\CAMISETA_TERCER_UNIFORME_RIVER_PLATE 20-21_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
                                     <h5 class="fw-bolder">Tercer Camiseta River Plate</h5>
-                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -195,12 +208,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -208,16 +221,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\RiverPlate\CAMISETA_VISITANTE_RIVER_PLATE_21-22_FRENTE.jpg" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta River Plate Visitante</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -225,12 +238,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -238,14 +251,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\RiverPlate\CAMPERA_ROMPEVIENTOS_RIVER_PLATE_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Campera River Plate</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -253,12 +266,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -266,16 +279,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\RiverPlate\MEDIAS_ADI_21_BLANCA.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Medias Blancas futbol</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -283,27 +296,27 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$2.000,00</span>
                                     $1.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" >Comprar</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\RiverPlate\MUSCULOSA_TIRO_RIVER_PLATE_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Musculosa River Plate</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -311,12 +324,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $8.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -325,19 +338,19 @@
 
 
 
-                    <!-- Selección argentina-->
+                   
 
 
                      <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Arquero Selección Argentina</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -345,11 +358,11 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                    $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -357,16 +370,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Local Selección Argentina</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -374,12 +387,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -387,16 +400,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\REMERA_ICON_ARGENTINA_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Selección Argentina Icons</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -404,12 +417,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -417,14 +430,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Alternativa Selección Argentina</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -432,12 +445,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -445,16 +458,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Manga Larga</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -462,12 +475,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -475,14 +488,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\Guantes_Selección.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Guantes Selección Argentina</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -490,12 +503,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $6.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -503,16 +516,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\MEDIAS_ PANTORRILLAS_AFA_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Medias Selección Argentina</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -520,12 +533,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$2.000,00</span>
                                     $1.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -533,14 +546,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\SeleccionArgentina\SHORTS_TITULAR_ARGENTINA_frente.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Shorts Selección Argentina</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -548,12 +561,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $8.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -561,19 +574,18 @@
                     </div>
 
 
-                    <!-- Boca Juniors-->
 
 
                      <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\CAMISETA_DE_ARQUERO_BOCA_JUNIORS_21-22_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Arquero Boca Juniors</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -581,11 +593,11 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                    $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -593,16 +605,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\CAMISETA_TITULAR_OFICIAL_BOCA_JUNIORS_21-22_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Local Boca Juniors</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -610,12 +622,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -623,16 +635,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\REMERA_ICONS_BOCA_JUNIORS_MANGA_LARGA_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Boca Juniors Icons</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -640,12 +652,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -653,14 +665,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\CAMISETA_VISITANTE_OFICIAL_BOCA_JUNIORS_21-22.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Tercer Camiseta Boca Juniors</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -668,12 +680,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -681,16 +693,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\TERCERA_CAMISETA_BOCA_JUNIORS_22-23_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Camiseta Boca Juniors Visitante</h5>
-                                     <!-- Product reviews-->
+                                     
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -698,12 +710,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$12.000,00</span>
                                     $10.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -711,14 +723,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\CAMPERA_ANTHEM_TIRO_BOCA_JUNIORS_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Campera Boca Juniors</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -726,12 +738,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $12.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -739,16 +751,16 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                           
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\MEDIAS_ADI_21_AMARILLA.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Medias Amarillas futbol</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -756,12 +768,12 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
+                                    
                                     <span class="text-muted text-decoration-line-through">$2.000,00</span>
                                     $1.800,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
@@ -769,14 +781,14 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
+                            
                             <img class="card-img-top" src=".\img\BocaJuniors\SHORTS_TERCERA_BOCA_JUNIORS_22-23_FRENTE.webp" alt="..." />
-                            <!-- Product details-->
+                            
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
+                                    
                                     <h5 class="fw-bolder">Shorts Boca Juniors</h5>
-                                    <!-- Product reviews-->
+                                    
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -784,19 +796,39 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-half"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <!--<span class="text-muted text-decoration-line-through">$12.000,00</span>-->
+                                    
+                                    
                                     $8.000,00
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                           
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=".\pages\PageNoFound.html">Comprar</a></div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+ -->
+            
+
+
+
+
+                
+   
+
+                <section class="py-5">
+                    <div class="container px-4 px-lg-5 mt-5">
+                        <div id="showAllProducts" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                        </div>
+                    </div>
+                </section>
+
+             
+
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
@@ -804,8 +836,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        <script src="./js/index.js"></script>
         <!-- Core theme JS-->
     </body>
 </html>
