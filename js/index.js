@@ -91,7 +91,7 @@ const CarritoNav = document.getElementById('carrito')
 
 console.dir(CarritoNav)
 
-if (almacenados !=null) {
+if (almacenados !=null && almacenados.length!=0) {
         for (const objeto of almacenados)
               {
               
@@ -500,7 +500,8 @@ function Login()
 
 
 
-Search.onchange = () => { 
+//Search.onchange = () => { 
+  Search.onkeydown = () => { onkeydown
                         //const busqueda = Listproducts.filter((el) => el.name.includes(Search.value.toUpperCase()))
                         //mostrarProductos2  (busqueda) 
                         let showAllProducts = document.getElementById('showAllProducts')
