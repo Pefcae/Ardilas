@@ -1,5 +1,6 @@
 let Pedido ='';
 const Listproducts =[];
+let busqueda=[]
 class talle {
     constructor(size,cantidad)
     {this.size = size;
@@ -73,7 +74,7 @@ class CarritoDeCompras {
 
 }
 
-  const cliente = new CarritoDeCompras();
+const cliente = new CarritoDeCompras();
 
   
 
@@ -496,4 +497,65 @@ function Login()
     alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
     
 }
+
+
+
+Search.onchange = () => { 
+                        //const busqueda = Listproducts.filter((el) => el.name.includes(Search.value.toUpperCase()))
+                        //mostrarProductos2  (busqueda) 
+                        let showAllProducts = document.getElementById('showAllProducts')
+
+                        
+                        showAllProducts.innerHTML = ''
+
+                          var input, filter, ul, li, a, i, txtValue;
+                          input = document.getElementById("Search")
+                          filter = input.value.toUpperCase();
+                          console.log(filter)
+                          if (filter=='') { 
+                                             showAllProducts.innerHTML = ''
+                                            mostrarProductos2(Listproducts)}
+
+
+                          for (let i = 0; i < Listproducts.length; i++) {
+                                a=Listproducts[i].name
+                                txtValue=a
+                             
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {   
+                                    busqueda.push (Listproducts[i])
+
+                                } 
+                
+                             }
+
+                            showAllProducts.innerHTML = ''
+
+                             mostrarProductos2(busqueda)
+            
+                             busqueda=[]
+
+
+
+                        }
+
+
+
+
+// function myFunction() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById("myInput");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL");
+//     li = ul.getElementsByTagName("li");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+
 
