@@ -3,6 +3,21 @@
 
 const tbody = document.querySelector('.tbody')
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+//const getLocalStorage = (key) => {const response = localStorage.getItem(key)
+//        null undefind "0" "[]"  "" "" 
+//        return response || "no item"
+//    }
+
+console.log (0 ?? "Nullish") //0
+console.log (40 ?? "Nullish") //40
+console.log (null ?? "Nullish") //nullish
+console.log (undefined ?? "Nullish") //Nullinh
+console.log (NaN ?? "Nullish") //NaN
+console.log (true ?? "Nullish") //true
+console.log (false ?? "Nullish") //false
+
+
+
 const almacenados = JSON.parse(localStorage.getItem("listaProductos"));
 const totalCarrito = JSON.parse(localStorage.getItem("Totalcarrito"));
 const cantidad = JSON.parse(localStorage.getItem('CantidadProductos'));
@@ -17,8 +32,9 @@ function realizarCompra()
 
                       tbody.innerHTML = ''
                      
-                  const cantidad2 = JSON.parse(localStorage.getItem('CantidadProductos'));
-                    if (cantidad2 == null ) {cantidad2=0}
+                  let cantidad2 = JSON.parse(localStorage.getItem('CantidadProductos'));
+                    cantidad2 = cantidad2 == null && 0
+
                     var x = document.getElementById("ContadorCarrito");
                     x.innerHTML = parseInt(cantidad2);
         }
@@ -46,7 +62,7 @@ function renderCarrito(){
                           `
                
                             tr.innerHTML = Content;
-                            tbody.append(tr)
+                            tbody.appendChild(tr)
 
                       }
                 )
@@ -58,7 +74,7 @@ function armarPagina(){
 
         const almacenados = JSON.parse(localStorage.getItem("listaProductos"));
         const totalCarrito = JSON.parse(localStorage.getItem("Totalcarrito"));
-        const cantidad = JSON.parse(localStorage.getItem('CantidadProductos'));
+        let cantidad = JSON.parse(localStorage.getItem('CantidadProductos'));
 
 
         for (const objeto of almacenados)
@@ -67,7 +83,8 @@ function armarPagina(){
               }
 
 
-        if (cantidad == null ) {cantidad=0}
+        cantidad = cantidad == null && 0
+
         var x = document.getElementById("ContadorCarrito");
         x.innerHTML = parseInt(cantidad);
 

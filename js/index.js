@@ -76,11 +76,9 @@ class CarritoDeCompras {
 
 const cliente = new CarritoDeCompras();
 
-  
 
 let cantidad = JSON.parse(localStorage.getItem('CantidadProductos'));
-if (cantidad ==0 || cantidad == null ) 
-               cantidad=0 
+if (cantidad ==0 || cantidad == null )     cantidad=0 
 var x = document.getElementById("ContadorCarrito");
 x.innerHTML = parseInt(cantidad);
 
@@ -89,7 +87,6 @@ const almacenados = JSON.parse(localStorage.getItem("listaProductos"));
 
 const CarritoNav = document.getElementById('carrito')
 
-console.dir(CarritoNav)
 
 if (almacenados !=null && almacenados.length!=0) {
         for (const objeto of almacenados)
@@ -153,6 +150,10 @@ const equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
 const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
 const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
 
+ //desestructuración, lo usa mayormente cuando trabaja con API
+  const desestructurar =({talles})=> { console.log(talles)}
+
+desestructurar (equipo1[2])
 
 
 const option = document.getElementById("option");
@@ -478,23 +479,26 @@ function Mensajes()
 
 function Login()
 {
-    let Usuario = prompt("Por favor Ingrese su Usuario  --- esto se va a reemplazar con SweetAlert y un lindo Popup");
 
-    while (Usuario =="" || Usuario ==null || Usuario.length <8) {
-        Usuario = prompt("Por favor Ingrese su nombre, recuerde que debe tener longitud mínima de 8 caracteres")
-        }
-    cliente.setName(Usuario);
+    Swal.fire('Any fool can use a computer')
 
-    let clave = prompt("Por favor Ingrese su clave");
+    // let Usuario = prompt("Por favor Ingrese su Usuario  --- esto se va a reemplazar con SweetAlert y un lindo Popup");
 
-    while (clave =="" || clave ==null || clave.length <8) {
-        clave = prompt("Por favor Ingrese su clave, recuerde que debe tener longitud mínima de 8 caracteres")
-        }
+    // while (Usuario =="" || Usuario ==null || Usuario.length <8) {
+    //     Usuario = prompt("Por favor Ingrese su nombre, recuerde que debe tener longitud mínima de 8 caracteres")
+    //     }
+    // cliente.setName(Usuario);
 
-    cliente.setName(Usuario);
+    // let clave = prompt("Por favor Ingrese su clave");
+
+    // while (clave =="" || clave ==null || clave.length <8) {
+    //     clave = prompt("Por favor Ingrese su clave, recuerde que debe tener longitud mínima de 8 caracteres")
+    //     }
+
+    // cliente.setName(Usuario);
 
 
-    alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
+    // alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
     
 }
 
@@ -502,61 +506,29 @@ function Login()
 
 //Search.onchange = () => { 
   Search.onkeydown = () => { onkeydown
-                        //const busqueda = Listproducts.filter((el) => el.name.includes(Search.value.toUpperCase()))
-                        //mostrarProductos2  (busqueda) 
                         let showAllProducts = document.getElementById('showAllProducts')
-
                         
-                        showAllProducts.innerHTML = ''
 
                           var input, filter, ul, li, a, i, txtValue;
                           input = document.getElementById("Search")
                           filter = input.value.toUpperCase();
-                          console.log(filter)
-                          if (filter=='') { 
-                                             showAllProducts.innerHTML = ''
-                                            mostrarProductos2(Listproducts)}
+                          //if (filter=='') { 
+                            //                mostrarProductos2(Listproducts)}
+
+                             filter == '' && mostrarProductos2(Listproducts)
 
 
                           for (let i = 0; i < Listproducts.length; i++) {
                                 a=Listproducts[i].name
                                 txtValue=a
                              
-                                if (txtValue.toUpperCase().indexOf(filter) > -1) {   
-                                    busqueda.push (Listproducts[i])
+                               // if (txtValue.toUpperCase().indexOf(filter) > -1) {  busqueda.push (Listproducts[i])     } 
+                             txtValue.toUpperCase().indexOf(filter) > -1 && busqueda.push (Listproducts[i]) 
 
-                                } 
-                
+
                              }
-
-                            showAllProducts.innerHTML = ''
 
                              mostrarProductos2(busqueda)
             
                              busqueda=[]
-
-
-
                         }
-
-
-
-
-// function myFunction() {
-//     var input, filter, ul, li, a, i, txtValue;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     ul = document.getElementById("myUL");
-//     li = ul.getElementsByTagName("li");
-//     for (i = 0; i < li.length; i++) {
-//         a = li[i].getElementsByTagName("a")[0];
-//         txtValue = a.textContent || a.innerText;
-//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
-//         }
-//     }
-// }
-
-
