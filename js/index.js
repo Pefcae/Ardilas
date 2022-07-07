@@ -151,9 +151,8 @@ const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
 const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
 
  //desestructuración, lo usa mayormente cuando trabaja con API
-  const desestructurar =({talles})=> { console.log(talles)}
-
-desestructurar (equipo1[2])
+ // const desestructurar =({talles})=> { console.log(talles)}
+ //desestructurar (equipo1[2])
 
 
 const option = document.getElementById("option");
@@ -253,6 +252,23 @@ function agregarCarrito(producto) {
 
     cliente.addProduct(producto) ;  
 
+    const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Producto agregado al carrito'
+        })
+
     //console.dir(producto)
     
 //    sessionStorage.setItem("productosCarrito",JSON.stringify(producto))
@@ -303,185 +319,103 @@ function operacion(valor1, valor2, operacion) {
 }
 
 
-// function pedirNUMERO(texto) {
-//     let valor = prompt(texto);
-//     while (isNaN(parseInt(valor)) ) {
-//         valor = prompt(texto);
-//     }
-//     return valor;
-// }
-
-
-//  function realizarPedido(array)
-//  {
-
-//      let eleccion=0;
-//      let menu='';
-//      let i=0;
-
-//     for (i=0;i < array.length ;i++ )
-//         {
-//             menu= menu +"" + (i+1) +" - "  + array[i].name + " $" + array[i].price_orig +"\n";
-//         }
-
-//     menu = menu +"\n"+"-1 - deshacer (elimina último)"
-
-//     menu = menu +"\n"+"0 - para finalizar"
-     
-
-//     eleccion = pedirNUMERO("Por favor seleccione una opción del menú\n" + menu );
-
-   
-//     while (eleccion<-1 || eleccion> array.length)
-//            { 
-//                 eleccion = pedirNUMERO("opción incorrecta, Por favor seleccione una opción del menú\n" + menu );
-//             }
-
-
-//      while (eleccion!="0")
-
-//               {  
-                 
-//                 if (eleccion==-1 && cliente.productos.length>0) {
-//                     cliente.eliminarUltProducto();
-
-//                 } 
-//                 else    
-//                  {   
-//                     cliente.addProduct(array[eleccion-1]) ;  
-//                   }
-
-//                 eleccion = pedirNUMERO("Por favor seleccione una opción del menú\n" + menu );
-
-//                 while (eleccion<-1 || eleccion>array.length)
-//                     { 
-//                         eleccion = pedirNUMERO("opción incorrecta, Por favor seleccione una opción del menú\n" + menu );
-//                     }
-//              }
-    
-
-// }
-
-// function HacerPedido(param)
-// {
-
-// //const cliente = new CarritoDeCompras();
-
-
-// alert ("Primera entrega de desafio final de Pablo Federiconi (Agregando Clases y arrays)");
-
-
-// //let Usuario = prompt("Por favor Ingrese su nombre");
-
-// //cliente.setName(Usuario);
-// if (cliente.name=='')
-
-//     {   let Usuario = prompt("Por favor Ingrese su nombre");
-
-//         cliente.setName(Usuario);
-//     }
-
-// alert ("Hola " + cliente.name + ", Bienvenido a Ardilas, compre con confianza :)");
-
-
-// let equipo='';
-// equipo=param;
-
-
-// if (equipo=='')
-//  {
-//     equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
-//     while (equipo<=0 || equipo> 5)
-//     { 
-//         equipo = pedirNUMERO("Por favor seleccione el equipo que desea comprar\n 1) River Plate \n 2) Boca Juniors \n 3) Selección Argentina \n 4) Todos los equipos \n 5) Salir");
-//     }
-// }
-
-// switch (equipo){
-//     case "1":
-//         realizarPedido(equipo1);
-//         break;
-//     case '2':
-//         realizarPedido(equipo2);
-//         break;
-//     case '3':
-//         realizarPedido(equipo3);
-//         break;
-//     case '4':
-//         realizarPedido(Listproducts);
-//         break;
-//     default:
-//         break;
-// }
-
-// if (cliente.productos.length>0)
-// {
-//     cliente.getTotal();
-
-//     let opcion=0;
-    
-//     opcion = prompt("¿Confirma el pedido? \n 1) Sí \n 2) No, quiero eliminar un producto \n 3)Vaciar carrito ");
-    
-//     while (opcion <0 || opcion>3)
-//            { 
-//                 opcion = pedirNUMERO("opción incorrecta, ¿Confirma el pedido? \n 1) Sí \n 2) No, quiero eliminar un producto \n 3)Vaciar carrito");
-//             }
-
-//             if (opcion==1 )  alert ("Pedido Confirmado");
-
-//     while (opcion!=1 )
-//     {
-
-//          switch (opcion){
-//                     case "1":
-//                             alert ("Pedido Confirmado");
-//                             cliente.vaciarCarrito();   
-//                         break;
-//                     case "2":
-//                         opcion = pedirNUMERO("Seleccione el número del item que desea eliminar\n" + Pedido);
-//                         while (opcion <0 || opcion>cliente.productos.length)
-//                            { 
-//                                 opcion = pedirNUMERO("Seleccione el número del item que desea eliminar\n" + Pedido);
-//                             }
-
-//                         cliente.eliminarProducto(opcion);
-//                         cliente.getTotal();
-
-//                         break;
-//                     case "3":
-//                         alert ("Se procedió a vaciar el carrito");
-//                         cliente.vaciarCarrito();   
-//                         cliente.getTotal();
-//                         break;
-//                     default:
-//                         break;
-//                 }
-
-//     opcion = prompt("¿Confirma el pedido \n 1) Sí \n 2) No, quiero eliminar un producto \n 3)Vaciar carrito ");
-    
-//     while (opcion <0 || opcion>3)
-//            { 
-//                 opcion = pedirNUMERO("opción incorrecta, ¿Confirma el pedido? \n 1) Sí \n 2) No, quiero eliminar un producto \n 3)Vaciar carrito");
-//             }
-
-//     }
-
-// }
-
-// alert("Muchas gracias, Vuelva Pronto");
-// }
 
 
 function Mensajes()
 {
-    alert("Aún no tiene mensajes -- esto se va a reemplazar con SweetAlert y un lindo Popup")
+        Swal.fire({
+          title: 'Aún no has recibido mensajes',
+          text: 'Le avisaremos en cuanto tenga algún mensaje.  Muchas gracias.',
+          imageUrl: 'https://cdn2.iconfinder.com/data/icons/communication-459/200/NO-EMAIL-3--NO-EMAIL-MAIL-MESSAGE-EMPTY-INBOX-OPEN-ENVELOPE-DISAPPOINTED-SAD-MAN-COMMUNICATION-512.png',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+        })
 }
+
+
+function registrarse()
+{
+
+        Swal.fire({
+
+
+        title: 'Registrate para poder comprar',
+        html:
+        '<input id="login" class="swal2-input" placeholder ="ingrese su usuario">' +
+        '<input id="password" type="password" class="swal2-input" placeholder ="ingrese su contraseña">',
+        focusConfirm: false,
+
+         preConfirm: () => {
+                const login = Swal.getPopup().querySelector('#login').value
+                const password = Swal.getPopup().querySelector('#password').value
+                if (!login || !password) {
+                  Swal.showValidationMessage(`Please enter login and password`)
+                }
+//                return { login: login, password: password }
+            cliente.setName(login);
+            guardarLocal("usuario", cliente.name);
+            }
+
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Gracias por registrarte, Bienvenido  ', '', 'success')
+            
+        }
+        })
+
+
+        
+
+
+}
+
 
 function Login()
 {
 
-    Swal.fire('Any fool can use a computer')
+        Swal.fire({
+          title: 'Login Form',
+          html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
+          <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+          confirmButtonText: 'Sign in',
+          showCancelButton: true,
+          showDenyButton: true,
+          cancelButtonText: "cancel",
+          confirmButtonText: 'Save',
+          denyButtonText: `Registrarse`,
 
+          focusConfirm: false,
+          preConfirm: () => {
+            const login = Swal.getPopup().querySelector('#login').value
+            const password = Swal.getPopup().querySelector('#password').value
+            if (!login || !password) {
+              Swal.showValidationMessage(`Please enter login and password`)
+            }
+            cliente.setName(login);
+            return { login: login, password: password }
+          }
+
+
+
+
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Bienvenido', '', 'success')
+            guardarLocal("usuario", cliente.name);
+       
+        } else if (result.isDenied) {
+              registrarse()
+          }
+        })
+
+
+            //Login: ${result.value.login}
+            
+            //Password: ${result.value.password}
+
+       
+                
     // let Usuario = prompt("Por favor Ingrese su Usuario  --- esto se va a reemplazar con SweetAlert y un lindo Popup");
 
     // while (Usuario =="" || Usuario ==null || Usuario.length <8) {
