@@ -20,7 +20,8 @@ const interval = setInterval(() => {
 
 
 const fetchLocalData = () => {
-	fetch('./data.json').then((response) =>response.json())
+	//fetch('./data.json').then((response) =>response.json())
+	fetch('https://pefcae.github.io/Ardilas/data.json').then((response) =>response.json())
 	.then((result)=>{
 			console.log(result)
 			renderContactSection(result.contact)
@@ -31,13 +32,14 @@ const fetchLocalData = () => {
 	})
 
 	}
+
 const renderTitle = (body) => {
 	console.log(body)
-	let container= document.getElementById('contenedor')
-	let title = document.createElement('h1')
-	title.textContent=body.title
-	title.style.color=body.styles.color
-	container.append(tittle)
+	//let container= document.getElementById('contenedor')
+	//let title = document.createElement('h1')
+	//title.textContent=body.title
+	//title.style.color=body.styles.color
+	//container.append(tittle)
 
 }
 

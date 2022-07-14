@@ -1,20 +1,31 @@
 {
-	"title":"mi sitio web",
+	"titleSection":{
+		"title":	"mi sitio web",
+		"styles":{
+			"color":"red"
+			}
+	 },
 	"projects":[
-		{
-			"name": "coderhouse"
+		{"name": "coderhouse",
+		  "precio":"1000"
 		},
-		{
-			"name": "pepe"	
-		},
-		{
-			"name": "tata"
-		}
+		{"name": "pepe",
+		  "precio":"2000"},
+		{"name": "tata",
+		  "precio":"3000"}
 	],
 	"contact":{
 		"phone":"1231321321",
 		"email":"example@example.com",
 		"addres":"av siempre viva"
-			
 	}
 }
+		this.code = code;
+        this.name = name;
+        this.estrellas=estrellas;
+        this.price_orig = price_orig;
+        this.price_final = price_final;
+        this.talles = [];
+        this.categoria=categoria;
+        this.descripcion=descripcion;
+        this.imagen=imagen;
