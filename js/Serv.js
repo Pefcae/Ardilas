@@ -1,11 +1,22 @@
+
+
 const timeout =()=> {
 	setTimeout(()=>{
-	 	alert('SetTimeout')
+//	 	alert('SetTimeout')
+			Swal.fire({
+				title: 'Ganaste un código de descuento: Coder2022',
+				width: 600,
+				padding: '3em',
+				color: '#716add',
+				background: '#fff',
+				
+			})
 
-	},2000	);
+
+	},12000	);
 }
 //ejecuta dps de cierto tiempo (2000)
-timeout();
+
 
 
 let contador=0
@@ -23,15 +34,27 @@ const fetchLocalData = () => {
 	//fetch('./data.json').then((response) =>response.json())
 	fetch('https://pefcae.github.io/Ardilas/data.json').then((response) =>response.json())
 	.then((result)=>{
-			console.log(result)
-			renderContactSection(result.contact)
-			renderTitle(result.titleSection)
+		//	renderContactSection(result.contact)
+		//	renderTitle(result.titleSection)
+		ListaDeProductos(result.productos)
+
 	}).catch((err)=>{
 
 		console.error(err)
 	})
 
 	}
+
+const ListaDeProductos = (body) =>{
+	body.forEach((product) => {
+                        
+	Listproducts.push(product)
+
+
+	})
+
+
+}
 
 const renderTitle = (body) => {
 	console.log(body)
@@ -48,3 +71,4 @@ const renderContactSection = (body) => {
 }
 
 	fetchLocalData()
+	timeout();

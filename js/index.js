@@ -1,5 +1,5 @@
-let Pedido ='';
 const Listproducts =[];
+let Pedido ='';
 let busqueda=[]
 class talle {
     constructor(size,cantidad)
@@ -7,7 +7,6 @@ class talle {
         this.cantidad = cantidad;
     }
 }
-
 class Product {
  constructor(code,name, estrellas, price_orig,price_final,categoria,descripcion,imagen) {
         this.code = code;
@@ -46,12 +45,10 @@ class CarritoDeCompras {
 
     eliminarProducto(valor) {
             this.productos.splice(valor-1, 1);
-            alert("Producto Eliminado");
       }
 
     eliminarUltProducto(valor) {   
             this.productos.pop()
-            alert("Producto Eliminado");
       }
 
     getTotal() 
@@ -107,7 +104,7 @@ if (almacenados !=null && almacenados.length!=0) {
 
 
 
-Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA',4.5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" ));
+/* Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA',4.5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" ));
 Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA',3,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp" ));
 Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21',4,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp" ));
 Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10',5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" ));
@@ -133,7 +130,7 @@ Listproducts.push (new Product('RP-05','CAMISETA VISITANTE RIVER PLATE 21-22',4.
 Listproducts.push (new Product('RP-06','CAMPERA ROMPEVIENTOS RIVER PLATE',3,12000,12000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMPERA_ROMPEVIENTOS_RIVER_PLATE_FRENTE.webp" ));
 Listproducts.push (new Product('RP-07','MEDIAS ADI 21 BLANCA',4,2000,1800,'RIVER', 'descripción producto',".\\img\\RiverPlate\\MEDIAS_ADI_21_BLANCA.webp" ));
 Listproducts.push (new Product('RP-09','MUSCULOSA TIRO RIVER PLATE',3.5,8000,8000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\MUSCULOSA_TIRO_RIVER_PLATE_FRENTE.webp" ));
-
+ */
 
 
 for (i=0;i < Listproducts.length ;i++ )
@@ -198,13 +195,14 @@ mostrarProductos2(Listproducts)
 //esta función no me anduvo. la idea era formatear a moneda 
 //console.log(formatterPeso.format('15000')) // "$10,000
 
-
+console.log (Listproducts)
 function mostrarProductos2 (array) {
 let showAllProducts = document.getElementById('showAllProducts')
 
  showAllProducts.innerHTML = ''
         array.forEach((product) => {
-                        
+
+
                         const tr = document.createElement('div')
                         tr.classList.add('col', 'mb-5')
                        const Content = `
@@ -220,7 +218,7 @@ let showAllProducts = document.getElementById('showAllProducts')
                                             <div class="bi-star-fill"></div>
                                             <div class="bi-star-fill"></div>
                                         </div>
-                                       $ ${product.price_final}
+                                       $ ${product.price_orig}
                                     </div>
                                 </div>
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -435,7 +433,6 @@ function Login()
     // alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
     
 }
-
 
 
 //Search.onchange = () => { 
