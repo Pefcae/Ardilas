@@ -47,6 +47,8 @@ function realizarCompra()
                     var x = document.getElementById("ContadorCarrito");
                     x.innerHTML = parseInt(cantidad2);
 
+
+
         }
 
 
