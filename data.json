@@ -1,3 +1,20 @@
 {
-	"title":"mi sitio web"
+	"title":"mi sitio web",
+	"projects":[
+		{
+			"name": "coderhouse"
+		},
+		{
+			"name": "pepe"	
+		},
+		{
+			"name": "tata"
+		}
+	],
+	"contact":{
+		"phone":"1231321321",
+		"email":"example@example.com",
+		"addres":"av siempre viva"
+			
+	}
 }

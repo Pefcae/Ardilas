@@ -23,11 +23,26 @@ const fetchLocalData = () => {
 	fetch('./data.json').then((response) =>response.json())
 	.then((result)=>{
 			console.log(result)
+			renderContactSection(result.contact)
+			renderTitle(result.titleSection)
 	}).catch((err)=>{
+
 		console.error(err)
 	})
 
 	}
+const renderTitle = (body) => {
+	console.log(body)
+	let container= document.getElementById('contenedor')
+	let title = document.createElement('h1')
+	title.textContent=body.title
+	title.style.color=body.styles.color
+	container.append(tittle)
 
+}
+
+const renderContactSection = (body) => {
+	console.log(body)
+}
 
 	fetchLocalData()
