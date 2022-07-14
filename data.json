@@ -7,8 +7,7 @@
 	 },
 
 "productos":[
-		{	
-			"code" :"SA-01",
+		{	"code" :"SA-01",
 			"name":"CAMISETA ALTERNATIVA ARGENTINA",
 			"estrellas":"4",
 			"price_orig":"12000",
@@ -17,9 +16,33 @@
 			"descripcion":"descripción producto",
 			"imagen":".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp"      
 		},
-{"code" :"SA-02","name":"CAMISETA ALTERNATIVA OFICIAL ARGENTINA"          ,"estrellas":"3","price_orig":"12000","price_Final":"10800","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp"                },
-{"code" :"SA-03","name":"CAMISETA DE ARQUERO TITULAR ARGENTINA 21"        ,"estrellas":"4","price_orig":"12000","price_Final":"12000","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp"      },
-{"code" :"SA-04","name":"CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10"   ,"estrellas":"5","price_orig":"12000","price_Final":"12000","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" },
+		{	"code" :"SA-02",
+			"name":"CAMISETA ALTERNATIVA OFICIAL ARGENTINA"          ,
+			"estrellas":"3",
+			"price_orig":"12000",
+			"price_Final":"10800",
+			"categoria":"ARGENTINA", 
+			"descripcion":"descripción producto",
+			"imagen":".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp"         
+		},
+		{"code" :"SA-03",
+			"name":"CAMISETA DE ARQUERO TITULAR ARGENTINA 21"        ,
+			"estrellas":"4",
+			"price_orig":"12000",
+			"price_Final":"12000",
+			"categoria":"ARGENTINA", 
+			"descripcion":"descripción producto",
+			"imagen":".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp"      
+		},
+		{"code" :"SA-04",
+			"name":"CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10"   ,
+			"estrellas":"5",
+			"price_orig":"12000",
+			"price_Final":"12000",
+			"categoria":"ARGENTINA", 
+			"descripcion":"descripción producto",
+			"imagen":".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" 
+		},
 {"code" :"SA-05","name":"GUANTES SELECCIÓN"                               ,"estrellas":"3","price_orig":"06000","price_Final":"06000","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\Guantes_Selección.webp"                                    },
 {"code" :"SA-06","name":"MEDIAS PANTORRILLAS AFA"                         ,"estrellas":"4","price_orig":"02000","price_Final":"01800","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\MEDIAS_PANTORRILLAS_AFA_FRENTE.webp"                       },
 {"code" :"SA-08","name":"REMERA ICON ARGENTINA"                           ,"estrellas":"4","price_orig":"12000","price_Final":"10800","categoria":"ARGENTINA", "descripcion":"descripción producto","imagen":".\\img\\SeleccionArgentina\\REMERA_ICON_ARGENTINA_FRENTE.webp"                         },
@@ -60,12 +83,4 @@
 		"addres":"av siempre viva"
 	}
 }
-		this.code = code;
-        this.name = name;
-        this.estrellas=estrellas;
-        this.price_orig = price_orig;
-        this.price_final = price_final;
-        this.talles = [];
-        this.categoria=categoria;
-        this.descripcion=descripcion;
-        this.imagen=imagen;
+	
