@@ -20,12 +20,3 @@
 		"addres":"av siempre viva"
 	}
 }
-		this.code = code;
-        this.name = name;
-        this.estrellas=estrellas;
-        this.price_orig = price_orig;
-        this.price_final = price_final;
-        this.talles = [];
-        this.categoria=categoria;
-        this.descripcion=descripcion;
-        this.imagen=imagen;
