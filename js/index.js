@@ -102,17 +102,117 @@ if (almacenados !=null && almacenados.length!=0) {
  
 
 
+  const fetchLocalData = () => {
+	//fetch('./data.json').then((response) =>response.json())
+	fetch('https://pefcae.github.io/Ardilas/data.json').then((response) =>response.json())
+	.then((result)=>{
+		//	renderContactSection(result.contact)
+		//	renderTitle(result.titleSection)
+		ListaDeProductos(result.productos)
+
+	}).catch((err)=>{
+
+		console.error(err)
+	})
+
+	}
+
+const ListaDeProductos = (body) =>{
+	body.forEach((producto) => {
+        Listproducts.push (new Product(  producto.code,producto.name, producto.estrellas,producto.price_orig,producto.price_final, producto.categoria,producto.descripcion,producto.imagen)  )                
+	    // Listproducts.push(product)
+        console.log(Listproducts)
+
+	})
 
 
-/* Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA',4.5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA',3,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21',4,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp" ));
-Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10',5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" ));
-Listproducts.push (new Product('SA-05','GUANTES SELECCIÓN',3.5,6000,6000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\Guantes_Selección.webp" ));
-Listproducts.push (new Product('SA-06','MEDIAS PANTORRILLAS AFA',4.5,2000,1800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\MEDIAS_PANTORRILLAS_AFA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-08','REMERA ICON ARGENTINA',4,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\REMERA_ICON_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-09','SHORTS TITULAR ARGENTINA',5,8000,8000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\SHORTS_TITULAR_ARGENTINA_frente.webp" ));
+}
 
+
+const renderTitle = (body) => {
+	console.log(body)
+	//let container= document.getElementById('contenedor')
+	//let title = document.createElement('h1')
+	//title.textContent=body.title
+	//title.style.color=body.styles.color
+	//container.append(tittle)
+}
+
+const renderContactSection = (body) => {
+	console.log(body)
+}
+
+fetchLocalData()
+
+
+
+
+
+
+
+
+
+const fetchCotizacion = () => {
+	//fetch('./data.json').then((response) =>response.json())
+	fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales').then((response) =>response.json())
+	.then((result)=>{
+		//	renderContactSection(result.contact)
+		//	renderTitle(result.titleSection)
+        console.log(result)
+	}).catch((err)=>{
+
+		console.error(err)
+	})
+
+	}
+
+const MostrarCotizacion = (body) =>{
+    console.log(body)
+
+	
+
+
+}
+
+
+fetchCotizacion()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA NO JSON',4.5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" ));
+Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA NO JSON',3,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp" ));
+Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21 NO JSON',4,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp" ));
+Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10 NO JSON',5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" ));
+Listproducts.push (new Product('SA-05','GUANTES SELECCIÓN',3.5,6000,6000,'ARGENTINA NO JSON', 'descripción producto',".\\img\\SeleccionArgentina\\Guantes_Selección.webp" ));
+Listproducts.push (new Product('SA-06','MEDIAS PANTORRILLAS AFA NO JSON',4.5,2000,1800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\MEDIAS_PANTORRILLAS_AFA_FRENTE.webp" ));
+Listproducts.push (new Product('SA-08','REMERA ICON ARGENTINA NO JSON',4,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\REMERA_ICON_ARGENTINA_FRENTE.webp" ));
+Listproducts.push (new Product('SA-09','SHORTS TITULAR ARGENTINA NO JSON',5,8000,8000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\SHORTS_TITULAR_ARGENTINA_frente.webp" ));
+/*
 Listproducts.push (new Product('BJ-01','CAMISETA DE ARQUERO BOCA JUNIORS 21-22',3,12000,12000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_DE_ARQUERO_BOCA_JUNIORS_21-22_FRENTE.webp" ));
 Listproducts.push (new Product('BJ-02','CAMISETA TITULAR OFICIAL BOCA JUNIORS 21-22',4,12000,10800,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_TITULAR_OFICIAL_BOCA_JUNIORS_21-22_FRENTE.webp" ));
 Listproducts.push (new Product('BJ-03','CAMISETA VISITANTE OFICIAL BOCA JUNIORS 21-22 ',5,12000,12000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_VISITANTE_OFICIAL_BOCA_JUNIORS_21-22.webp" ));
@@ -135,6 +235,7 @@ Listproducts.push (new Product('RP-09','MUSCULOSA TIRO RIVER PLATE',3.5,8000,800
 
 for (i=0;i < Listproducts.length ;i++ )
 {
+
     Listproducts[i].addTalle( new talle ('XS',100))
     Listproducts[i].addTalle( new talle ('S',500))
     Listproducts[i].addTalle( new talle ('M',600))
@@ -146,6 +247,8 @@ for (i=0;i < Listproducts.length ;i++ )
 const equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
 const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
 const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
+//console.log(Listproducts)
+console.log(equipo1)
 
  //desestructuración, lo usa mayormente cuando trabaja con API
  // const desestructurar =({talles})=> { console.log(talles)}
@@ -195,7 +298,7 @@ mostrarProductos2(Listproducts)
 //esta función no me anduvo. la idea era formatear a moneda 
 //console.log(formatterPeso.format('15000')) // "$10,000
 
-console.log (Listproducts)
+
 function mostrarProductos2 (array) {
 let showAllProducts = document.getElementById('showAllProducts')
 
