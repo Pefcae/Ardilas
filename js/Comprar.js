@@ -3,19 +3,6 @@
 
 const tbody = document.querySelector('.tbody')
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
-//const getLocalStorage = (key) => {const response = localStorage.getItem(key)
-//        null undefind "0" "[]"  "" "" 
-//        return response || "no item"
-//    }
-
-// console.log (0 ?? "Nullish") //0
-// console.log (40 ?? "Nullish") //40
-// console.log (null ?? "Nullish") //nullish
-// console.log (undefined ?? "Nullish") //Nullinh
-// console.log (NaN ?? "Nullish") //NaN
-// console.log (true ?? "Nullish") //true
-// console.log (false ?? "Nullish") //false
-
 
 
 const almacenados = JSON.parse(localStorage.getItem("listaProductos"));
@@ -133,8 +120,7 @@ function armarPagina(){
 
                          `
 
-//                                                 <a href="..\\index.html">
-  //                                              </a> 
+
 
          Confir.innerHTML = Content;
          totales.textContent = ``
@@ -143,7 +129,6 @@ function armarPagina(){
         Confir.addEventListener("click", () => {     realizarCompra()        })  
 
         EfectuarCompra.appendChild(Confir)
-        //EfectuarCompra.appendChild(totales)
 
 
 
@@ -245,8 +230,7 @@ function registrarse()
                 if (!login || !password) {
                   Swal.showValidationMessage(`Please enter login and password`)
                 }
-//                return { login: login, password: password }
-            //cliente.setName(login);
+
             guardarLocal("usuario", cliente.name);
             }
 
@@ -285,7 +269,6 @@ function Login()
             if (!login || !password) {
               Swal.showValidationMessage(`Please enter login and password`)
             }
-            //cliente.setName(login);
             return { login: login, password: password }
           }
 
@@ -303,29 +286,7 @@ function Login()
         })
 
 
-            //Login: ${result.value.login}
-            
-            //Password: ${result.value.password}
-
-       
-                
-    // let Usuario = prompt("Por favor Ingrese su Usuario  --- esto se va a reemplazar con SweetAlert y un lindo Popup");
-
-    // while (Usuario =="" || Usuario ==null || Usuario.length <8) {
-    //     Usuario = prompt("Por favor Ingrese su nombre, recuerde que debe tener longitud mínima de 8 caracteres")
-    //     }
-    // cliente.setName(Usuario);
-
-    // let clave = prompt("Por favor Ingrese su clave");
-
-    // while (clave =="" || clave ==null || clave.length <8) {
-    //     clave = prompt("Por favor Ingrese su clave, recuerde que debe tener longitud mínima de 8 caracteres")
-    //     }
-
-    // cliente.setName(Usuario);
-
-
-    // alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
+           
     
 }
 

@@ -1,8 +1,27 @@
 
+const fetchCotizacion = () => {
+	fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales').then((response) =>response.json())
+	.then((result)=>{
+        MostrarCotizacion(result)
+	}).catch((err)=>{
+
+		console.error(err)
+	})
+
+	}
+
+const MostrarCotizacion = (body) =>{
+    
+
+    let cotizacion = document.getElementById('cotizacion')
+    cotizacion.innerHTML = 'Cotización Dolar: ' + body[0].casa.compra
+    cotizacion.classList.add('text-sm-center','text-md-center','text-lg-center' )
+
+}
+
 
 const timeout =()=> {
 	setTimeout(()=>{
-//	 	alert('SetTimeout')
 			Swal.fire({
 				title: 'Ganaste un código de descuento: Coder2022',
 				width: 600,
@@ -18,17 +37,9 @@ const timeout =()=> {
 //ejecuta dps de cierto tiempo (2000)
 
 
-
-let contador=0
 const interval = setInterval(() => {
-	contador ++
-	console.log('contador' ,contador)
 	fetchCotizacion()
-
-	/*if (contador>=5){
-		clearInterval	(interval)
-		console.log('Fin')
-	}*/
-},10000)
+	},10000)
 
 
+fetchCotizacion()

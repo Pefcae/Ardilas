@@ -1,6 +1,9 @@
 const Listproducts =[];
 let Pedido ='';
-let busqueda=[]
+let busqueda=[];
+let equipo1 = [];
+let equipo2 = [];
+let equipo3 = [];
 class talle {
     constructor(size,cantidad)
     {this.size = size;
@@ -59,12 +62,9 @@ class CarritoDeCompras {
 
          for (const A of this.productos) 
             {
-        //    cont++;
             this.total = this.total + A.price_final
-            //Pedido=Pedido + cont + " - " + A.name +" $"+ A.price_orig   + "\n"
             }
         
-       // alert ( "Hola " + this.name + " su pedido es: \n" + Pedido + "\n Total: " + this.total);
          return this.total
         }
 
@@ -103,11 +103,9 @@ if (almacenados !=null && almacenados.length!=0) {
 
 
   const fetchLocalData = () => {
-	//fetch('./data.json').then((response) =>response.json())
 	fetch('https://pefcae.github.io/Ardilas/data.json').then((response) =>response.json())
 	.then((result)=>{
-		//	renderContactSection(result.contact)
-		//	renderTitle(result.titleSection)
+
 		ListaDeProductos(result.productos)
 
 	}).catch((err)=>{
@@ -120,8 +118,11 @@ if (almacenados !=null && almacenados.length!=0) {
 const ListaDeProductos = (body) =>{
 	body.forEach((producto) => {
         Listproducts.push (new Product(  producto.code,producto.name, producto.estrellas,producto.price_orig,producto.price_final, producto.categoria,producto.descripcion,producto.imagen)  )                
-	    // Listproducts.push(product)
-        console.log(Listproducts)
+         equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
+         equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
+         equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
+         mostrarProductos2(Listproducts)
+
 
 	})
 
@@ -129,18 +130,6 @@ const ListaDeProductos = (body) =>{
 }
 
 
-const renderTitle = (body) => {
-	console.log(body)
-	//let container= document.getElementById('contenedor')
-	//let title = document.createElement('h1')
-	//title.textContent=body.title
-	//title.style.color=body.styles.color
-	//container.append(tittle)
-}
-
-const renderContactSection = (body) => {
-	console.log(body)
-}
 
 fetchLocalData()
 
@@ -152,85 +141,7 @@ fetchLocalData()
 
 
 
-const fetchCotizacion = () => {
-	//fetch('./data.json').then((response) =>response.json())
-	fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales').then((response) =>response.json())
-	.then((result)=>{
-		//	renderContactSection(result.contact)
-		//	renderTitle(result.titleSection)
-        console.log(result)
-	}).catch((err)=>{
 
-		console.error(err)
-	})
-
-	}
-
-const MostrarCotizacion = (body) =>{
-    console.log(body)
-
-	
-
-
-}
-
-
-fetchCotizacion()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- Listproducts.push (new Product('SA-01','CAMISETA ALTERNATIVA ARGENTINA NO JSON',4.5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_OFICIAL_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-02','CAMISETA ALTERNATIVA OFICIAL ARGENTINA NO JSON',3,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_ALTERNATIVA_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-03','CAMISETA DE ARQUERO TITULAR ARGENTINA 21 NO JSON',4,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_DE_ARQUERO_TITULAR_ARGENTINA_21_FRENTE.webp" ));
-Listproducts.push (new Product('SA-04','CAMISETA TITULAR SELECCIÀN ARGENTINA MESSI 10 NO JSON',5,12000,12000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\CAMISETA_TITULAR_SELECCIÓN_ARGENTINA_MESSI_10_FRENTE.webp" ));
-Listproducts.push (new Product('SA-05','GUANTES SELECCIÓN',3.5,6000,6000,'ARGENTINA NO JSON', 'descripción producto',".\\img\\SeleccionArgentina\\Guantes_Selección.webp" ));
-Listproducts.push (new Product('SA-06','MEDIAS PANTORRILLAS AFA NO JSON',4.5,2000,1800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\MEDIAS_PANTORRILLAS_AFA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-08','REMERA ICON ARGENTINA NO JSON',4,12000,10800,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\REMERA_ICON_ARGENTINA_FRENTE.webp" ));
-Listproducts.push (new Product('SA-09','SHORTS TITULAR ARGENTINA NO JSON',5,8000,8000,'ARGENTINA', 'descripción producto',".\\img\\SeleccionArgentina\\SHORTS_TITULAR_ARGENTINA_frente.webp" ));
-/*
-Listproducts.push (new Product('BJ-01','CAMISETA DE ARQUERO BOCA JUNIORS 21-22',3,12000,12000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_DE_ARQUERO_BOCA_JUNIORS_21-22_FRENTE.webp" ));
-Listproducts.push (new Product('BJ-02','CAMISETA TITULAR OFICIAL BOCA JUNIORS 21-22',4,12000,10800,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_TITULAR_OFICIAL_BOCA_JUNIORS_21-22_FRENTE.webp" ));
-Listproducts.push (new Product('BJ-03','CAMISETA VISITANTE OFICIAL BOCA JUNIORS 21-22 ',5,12000,12000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMISETA_VISITANTE_OFICIAL_BOCA_JUNIORS_21-22.webp" ));
-Listproducts.push (new Product('BJ-05','CAMPERA ANTHEM TIRO BOCA JUNIORS',4.5,12000,12000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\CAMPERA_ANTHEM_TIRO_BOCA_JUNIORS_FRENTE.webp" ));
-Listproducts.push (new Product('BJ-06','MEDIAS ADI 21 AMARILLA',3,2000,1800,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\MEDIAS_ADI_21_AMARILLA.webp" ));
-Listproducts.push (new Product('BJ-08','REMERA ICONS BOCA JUNIORS MANGA LARGA',5,12000,10800,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\REMERA_ICONS_BOCA_JUNIORS_MANGA_LARGA_FRENTE.webp" ));
-Listproducts.push (new Product('BJ-09','SHORTS TERCERA BOCA JUNIORS 22-23',3.5,8000,8000,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\SHORTS_TERCERA_BOCA_JUNIORS_22-23_FRENTE.webp" ));
-Listproducts.push (new Product('BJ-10','TERCERA CAMISETA BOCA JUNIORS 22-23',4.5,12000,10800,'BOCA', 'descripción producto',".\\img\\BocaJuniors\\TERCERA_CAMISETA_BOCA_JUNIORS_22-23_FRENTE.webp" ));
-
-Listproducts.push (new Product('RP-01','CAMISETA DE ARQUERO RIVER PLATE 21-22',3,12000,12000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMISETA_DE_ARQUERO_RIVER_PLATE_21-22_FRENTE.webp"));
-Listproducts.push (new Product('RP-02','CAMISETA LOCAL RIVER PLATE 21-22',4,12000,10800,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMISETA_LOCAL_RIVER_PLATE_21-22_FRENTE.webp" ));
-Listproducts.push (new Product('RP-03','CAMISETA RIVER PLATE ICONS',5,12000,10800,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMISETA_RIVER_PLATE_ICONS_FRENTE.webp" ));
-Listproducts.push (new Product('RP-04','CAMISETA TERCER UNIFORME RIVER PLATE 20-21',3.5,12000,12000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMISETA_TERCER_UNIFORME_RIVER_PLATE_20-21_FRENTE.webp" ));
-Listproducts.push (new Product('RP-05','CAMISETA VISITANTE RIVER PLATE 21-22',4.5,12000,10800,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMISETA_VISITANTE_RIVER_PLATE_21-22_FRENTE.jpg" ));
-Listproducts.push (new Product('RP-06','CAMPERA ROMPEVIENTOS RIVER PLATE',3,12000,12000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\CAMPERA_ROMPEVIENTOS_RIVER_PLATE_FRENTE.webp" ));
-Listproducts.push (new Product('RP-07','MEDIAS ADI 21 BLANCA',4,2000,1800,'RIVER', 'descripción producto',".\\img\\RiverPlate\\MEDIAS_ADI_21_BLANCA.webp" ));
-Listproducts.push (new Product('RP-09','MUSCULOSA TIRO RIVER PLATE',3.5,8000,8000,'RIVER', 'descripción producto',".\\img\\RiverPlate\\MUSCULOSA_TIRO_RIVER_PLATE_FRENTE.webp" ));
- */
 
 
 for (i=0;i < Listproducts.length ;i++ )
@@ -244,22 +155,14 @@ for (i=0;i < Listproducts.length ;i++ )
 }
 
 
-const equipo1 = Listproducts.filter((el) => el.categoria.includes('RIVER'))
-const equipo2 = Listproducts.filter((el) => el.categoria.includes('BOCA'))
-const equipo3 = Listproducts.filter((el) => el.categoria.includes('ARGENTINA'))
-//console.log(Listproducts)
-console.log(equipo1)
 
- //desestructuración, lo usa mayormente cuando trabaja con API
- // const desestructurar =({talles})=> { console.log(talles)}
- //desestructurar (equipo1[2])
+
 
 
 const option = document.getElementById("option");
 
 
 option.addEventListener("click", () => {
-    //mostrarProductos2(option.value)
      switch (option.value){
             case "opt1":
                 mostrarProductos2(Listproducts)
@@ -287,16 +190,6 @@ option.addEventListener("click", () => {
 
 
 
-mostrarProductos2(Listproducts)
-
-// const formatterPeso = new Intl.NumberFormat('es-CO', {
-//        style: 'currency',
-//        currency: 'COP',
-//        minimumFractionDigits: 0
-//      })
-
-//esta función no me anduvo. la idea era formatear a moneda 
-//console.log(formatterPeso.format('15000')) // "$10,000
 
 
 function mostrarProductos2 (array) {
@@ -334,7 +227,6 @@ let showAllProducts = document.getElementById('showAllProducts')
                           `
                           
                           tr.innerHTML = Content;
-                          //tbody.append(tr)    
 
                             tr.addEventListener("click",()=>{ agregarCarrito(product) } ) 
                             
@@ -343,11 +235,9 @@ let showAllProducts = document.getElementById('showAllProducts')
     })
 }
 
-//const tbody = document.querySelector('.tbody')
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 
-//let carrito[]
 
 function agregarCarrito(producto) {
 
@@ -370,12 +260,7 @@ function agregarCarrito(producto) {
           title: 'Producto agregado al carrito'
         })
 
-    //console.dir(producto)
-    
-//    sessionStorage.setItem("productosCarrito",JSON.stringify(producto))
-    
-    
-    //alert (cliente.getTotal())
+
 
     guardarLocal("listaProductos", JSON.stringify(cliente.productos));
     guardarLocal("Totalcarrito", JSON.stringify(cliente.getTotal()));
@@ -389,9 +274,6 @@ function agregarCarrito(producto) {
 
 
 
-   // if (sessionStorage.getItem("productosCarrito")){
-    //    carritoProductos=JSON.parse(sessionStorage.getItem("productosCarrito"));
-   // }
 
 
 }
@@ -453,7 +335,6 @@ function registrarse()
                 if (!login || !password) {
                   Swal.showValidationMessage(`Please enter login and password`)
                 }
-//                return { login: login, password: password }
             cliente.setName(login);
             guardarLocal("usuario", cliente.name);
             }
@@ -511,34 +392,10 @@ function Login()
         })
 
 
-            //Login: ${result.value.login}
             
-            //Password: ${result.value.password}
-
-       
-                
-    // let Usuario = prompt("Por favor Ingrese su Usuario  --- esto se va a reemplazar con SweetAlert y un lindo Popup");
-
-    // while (Usuario =="" || Usuario ==null || Usuario.length <8) {
-    //     Usuario = prompt("Por favor Ingrese su nombre, recuerde que debe tener longitud mínima de 8 caracteres")
-    //     }
-    // cliente.setName(Usuario);
-
-    // let clave = prompt("Por favor Ingrese su clave");
-
-    // while (clave =="" || clave ==null || clave.length <8) {
-    //     clave = prompt("Por favor Ingrese su clave, recuerde que debe tener longitud mínima de 8 caracteres")
-    //     }
-
-    // cliente.setName(Usuario);
-
-
-    // alert ("Hola " + cliente.name + ", Gracias por iniciar Sesion :)  -- esto se va a reemplazar con SweetAlert y un lindo Popup");
-    
 }
 
 
-//Search.onchange = () => { 
   Search.onkeydown = () => { onkeydown
                         let showAllProducts = document.getElementById('showAllProducts')
                         
@@ -546,8 +403,7 @@ function Login()
                           var input, filter, ul, li, a, i, txtValue;
                           input = document.getElementById("Search")
                           filter = input.value.toUpperCase();
-                          //if (filter=='') { 
-                            //                mostrarProductos2(Listproducts)}
+
 
                              filter == '' && mostrarProductos2(Listproducts)
 
@@ -556,7 +412,6 @@ function Login()
                                 a=Listproducts[i].name
                                 txtValue=a
                              
-                               // if (txtValue.toUpperCase().indexOf(filter) > -1) {  busqueda.push (Listproducts[i])     } 
                              txtValue.toUpperCase().indexOf(filter) > -1 && busqueda.push (Listproducts[i]) 
 
 
